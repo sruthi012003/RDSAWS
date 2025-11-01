@@ -1,15 +1,15 @@
 provider "aws" {
-  region = "ap-southeast-1"
+  region = "us-east-1"
 }
 # Get existing VPC
 data "aws_vpc" "existing_vpc" {
-  id = "vpc-062b9f6d61a0694c1"
+  id = "vpc-vpc-0d1f96d135591e82d"
 }
 # Subnet in ap-south-1a
 resource "aws_subnet" "subnet_a" {
   vpc_id            = data.aws_vpc.existing_vpc.id
   cidr_block        = "10.0.3.0/24"
-  availability_zone = "ap-southeast-1a"
+  availability_zone = "us-east-1a"
   tags = {
     Name = "Example-Subnet-A"
   }
@@ -18,7 +18,7 @@ resource "aws_subnet" "subnet_a" {
 resource "aws_subnet" "subnet_b" {
   vpc_id            = data.aws_vpc.existing_vpc.id
   cidr_block        = "10.0.2.0/24"
-  availability_zone = "ap-southeast-1b"
+  availability_zone = "us-east-1b"
   tags = {
     Name = "Example-Subnet-B"
   }
