@@ -1,10 +1,10 @@
 provider "aws" {
-  region = "ap-southeast-1"
+  region = "ap-northeast-3"
 }
  
 # Get existing VPC
 data "aws_vpc" "existing_vpc" {
-  id = "data.aws_vpc.existing_vpc.id"
+  id = "vpc-0aa3ceb4e93d236b7"
 }
  
 # Subnet in ap-south-1a
